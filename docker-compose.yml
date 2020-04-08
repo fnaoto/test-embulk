@@ -1,0 +1,36 @@
+version: "3.4"
+
+services:
+  from_db:
+    image: mysql:5.7
+    ports:
+      - '13306:3306'
+    volumes:
+      - from_db-volume:/var/lib/mysql
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+      - MYSQL_ROOT_PASSWORD=password
+
+  to_db:
+    image: mysql:5.7
+    ports:
+      - '23306:3306'
+    volumes:
+      - to_db-volume:/var/lib/mysql
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+      - MYSQL_ROOT_PASSWORD=password
+
+  embulk:
+    command: /bin/sh -c ""
+    build:
+      context: .
+    links:
+      - from_db
+      - to_db
+    environment:
+      - TZ=Asia/Tokyo
+
+volumes:
+  from_db-volume:
+  to_db-volume:
