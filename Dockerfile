@@ -9,3 +9,6 @@ RUN apt-get -y update && \
 RUN curl -o /usr/local/bin/embulk --create-dirs \
       -L "http://dl.embulk.org/embulk-latest.jar" && \
     chmod +x /usr/local/bin/embulk
+
+RUN embulk gem install embulk-output-mysql
+RUN embulk gem install embulk-input-mysql
