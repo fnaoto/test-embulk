@@ -22,7 +22,7 @@ services:
       - MYSQL_ROOT_PASSWORD=password
 
   embulk:
-    command: /bin/sh -c ""
+    tty: true
     build:
       context: .
     links:
