@@ -1,0 +1,18 @@
+{% include 'env' %}
+in:
+  type: mysql
+  user: {{ from_user_name }}
+  password: {{ from_db_password }}
+  database: {{ from_database_name }}
+  table: {{ from_table_name }}
+  host: {{ from_database_host }}
+  select: {{ from_select_columns }}
+out:
+  type: mysql
+  user: {{ to_user_name }}
+  password: {{ to_db_password }}
+  database: {{ to_database_name }}
+  table: {{ to_table_name }}
+  host: {{ to_database_host }}
+  select: {{ to_select_columns }}
+  mode: insert
