@@ -6,7 +6,7 @@ services:
     ports:
       - '13306:3306'
     volumes:
-      - from_db-volume:/var/lib/mysql
+      - ./mysql/from_db:/var/lib/mysql
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=true
       - MYSQL_ROOT_PASSWORD=password
@@ -16,7 +16,7 @@ services:
     ports:
       - '23306:3306'
     volumes:
-      - to_db-volume:/var/lib/mysql
+      - ./mysql/to_db:/var/lib/mysql
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=true
       - MYSQL_ROOT_PASSWORD=password
