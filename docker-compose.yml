@@ -6,20 +6,21 @@ services:
     ports:
       - '13306:3306'
     volumes:
-      - ./mysql/from_db:/var/lib/mysql
+      - from_db-volume:/var/lib/mysql
     environment:
-      - MYSQL_ALLOW_EMPTY_PASSWORD=true
-      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=pass
+      - ./mysql/from_db/init.sql:/docker-entrypoint-initdb.d
+      - TZ=Asia/Tokyo
 
   to_db:
     image: mysql:5.7
     ports:
       - '23306:3306'
     volumes:
-      - ./mysql/to_db:/var/lib/mysql
+      - to_db-volume:/var/lib/mysql
     environment:
-      - MYSQL_ALLOW_EMPTY_PASSWORD=true
-      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=pass
+      - TZ=Asia/Tokyo
 
   embulk:
     tty: true
