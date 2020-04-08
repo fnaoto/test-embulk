@@ -26,6 +26,8 @@ services:
     tty: true
     build:
       context: .
+    volumes:
+      - ./liquid:/liquid
     links:
       - from_db
       - to_db
