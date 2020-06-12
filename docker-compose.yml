@@ -13,7 +13,6 @@ services:
       - TZ=Asia/Tokyo
 
   embulk:
-    tty: true
     image: ietty/embulk
     volumes:
       - ./liquid:/liquid:cached
