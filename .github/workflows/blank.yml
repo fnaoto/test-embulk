@@ -17,6 +17,5 @@ jobs:
       run: |
         docker-compose build
         docker-compose up -d
-        docker-compose 
         docker-compose exec embulk sh -c "embulk preview /liquid/_config.yml.liquid"
         docker-compose exec embulk sh -c "embulk run /liquid/_config.yml.liquid"
