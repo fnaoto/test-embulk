@@ -6,7 +6,7 @@ in:
   database: {{ from_database_name }}
   table: {{ from_table_name }}
   host: {{ from_database_host }}
-  select: {{ from_select_columns }}
+  select: '*'
 out:
   type: mysql
   user: {{ to_user_name }}
@@ -14,8 +14,10 @@ out:
   database: {{ to_database_name }}
   table: {{ to_table_name }}
   host: {{ to_database_host }}
-  select: {{ to_select_columns }}
+  select: '*'
   mode: merge
+  merge_rule:
+    - 'id=VALUES(`id`)'
   create_table_constraint: '
     KEY `index_name` (`name`)
   '
