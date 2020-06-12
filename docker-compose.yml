@@ -14,8 +14,7 @@ services:
 
   embulk:
     tty: true
-    build:
-      context: .
+    image: ietty/embulk
     volumes:
       - ./liquid:/liquid:cached
     links:
