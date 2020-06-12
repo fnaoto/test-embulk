@@ -16,3 +16,9 @@ out:
   host: {{ to_database_host }}
   select: {{ to_select_columns }}
   mode: merge
+  create_table_constraint: '
+    KEY `index_name` (`name`)
+  '
+  column_options:
+    id: { type: 'int(20) primary key NOT NULL AUTO_INCREMENT' }
+    name: { type: 'varchar(20)' }

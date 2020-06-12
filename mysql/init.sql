@@ -12,7 +12,7 @@ CREATE TABLE IF not exists `from_db`.`from_table`
 INSERT `from_db`.`from_table` (`name`) VALUES ('test1'); -- duplicate
 INSERT `from_db`.`from_table` (`name`) VALUES ('test2');
 INSERT `from_db`.`from_table` (`name`) VALUES ('test3');
-CREATE UNIQUE INDEX `name_index` on `from_db`.`from_table`(`name`);
+CREATE UNIQUE INDEX `index_name` on `from_db`.`from_table`(`name`);
 
 -- TO
 
@@ -28,4 +28,4 @@ CREATE TABLE IF not exists `to_db`.`to_table`
 INSERT `to_db`.`to_table` (`name`) VALUES ('test4');
 INSERT `to_db`.`to_table` (`name`) VALUES ('test5');
 INSERT `to_db`.`to_table` (`name`) VALUES ('test1'); -- duplicate
-CREATE UNIQUE INDEX `name_index` on `to_db`.`to_table`(`name`);
+CREATE UNIQUE INDEX `index_name` on `to_db`.`to_table`(`name`);
