@@ -4,8 +4,8 @@ Test embulk with docker-compose
 Init
 
 ```
-docker-compose build
-docker-compose up -d
+docker-compose -f docker-compose.yml -f docker-compose.local.yml build
+docker-compose -f docker-compose.yml -f docker-compose.local.yml up -d
 ```
 
 Preview
