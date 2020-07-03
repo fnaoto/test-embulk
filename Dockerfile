@@ -12,3 +12,4 @@ RUN curl -o /usr/local/bin/embulk --create-dirs \
 
 RUN embulk gem install embulk-output-mysql
 RUN embulk gem install embulk-input-mysql
+RUN embulk gem install embulk-filter-timestamp_format
