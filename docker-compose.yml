@@ -13,12 +13,11 @@ services:
       - TZ=Asia/Tokyo
 
   embulk:
-    image: ietty/embulk
+    build: .
+    tty: true
     volumes:
       - ./liquid:/liquid:cached
     links:
       - db
     environment:
       - TZ=Asia/Tokyo
-    depends_on:
-      - db
