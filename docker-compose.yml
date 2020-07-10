@@ -19,5 +19,7 @@ services:
       - ./liquid:/liquid:cached
     links:
       - db
+    depends_on:
+      - db
     environment:
       - TZ=Asia/Tokyo
