@@ -16,5 +16,5 @@ jobs:
     - name: Run a embulk
       run: |
         docker-compose build
-        docker-compose run embulk sh -c "sleep 3 && embulk preview /liquid/_config.yml.liquid"
-        docker-compose run embulk sh -c "sleep 3 && embulk run /liquid/_config.yml.liquid"
+        docker-compose run embulk sh -c "sleep 5 && embulk preview /liquid/_config.yml.liquid"
+        docker-compose run embulk sh -c "sleep 5 && embulk run /liquid/_config.yml.liquid"
